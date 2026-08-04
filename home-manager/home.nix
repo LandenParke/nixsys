@@ -41,6 +41,7 @@
     # '')
     pkgs.kitty
     pkgs.vesktop
+    pkgs.fastfetch
     inputs.helium.packages.${pkgs.system}.default
   ];
   
