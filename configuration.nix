@@ -70,7 +70,7 @@
   home-manager = {
     extraSpecialArgs = {inherit inputs; };
     users = {
-      "landen" = import ./home.nix;
+      "landen" = import ./home-manager/home.nix;
     };
     useUserPackages = true;
     useGlobalPkgs = true;
@@ -87,6 +87,7 @@
     wget
     kitty
     sway
+    gnome-files
   ];
 
   security.polkit.enable = true;
