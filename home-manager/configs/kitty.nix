@@ -1,6 +1,7 @@
 { inputs, lib, config, pkgs, ... }: {
   programs.kitty = lib.mkForce {
     enable = true;
+    shellIntegration.enableZshIntegration = true;
     font = {
       package = pkgs.ibm-plex;
       size = 12;
