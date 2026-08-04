@@ -18,6 +18,7 @@
   # Includes
   imports = [
     ./configs/kitty.nix
+    ./window-manager/sway.nix
   ];
 
   # The home.packages option allows you to install Nix packages into your
@@ -104,14 +105,6 @@
   #
   home.sessionVariables = {
     # EDITOR = "emacs";
-  };
-  
-  wayland.windowManager.sway = {
-    enable = true;
-    config = rec {
-      modifier = "Mod4";
-      terminal = "kitty";
-    };
   };
 
   # Let Home Manager install and manage itself.
