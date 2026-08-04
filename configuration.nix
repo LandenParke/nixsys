@@ -87,7 +87,7 @@
     wget
     kitty
     sway
-    gnome-files
+    thunar
   ];
 
   security.polkit.enable = true;
