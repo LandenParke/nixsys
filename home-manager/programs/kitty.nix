@@ -2,7 +2,7 @@
   programs.kitty = lib.mkForce {
     enable = true;
     font = {
-      family = "IBM Plex";
+      package = pkgs.ibm-plex;
       size = 12;
     };
     settings = {
