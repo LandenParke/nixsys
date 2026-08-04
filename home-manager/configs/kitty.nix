@@ -4,7 +4,7 @@
     font = {
       package = pkgs.ibm-plex;
       size = 12;
-      name = "IBM Plex";
+      name = "IBM Plex Mono";
     };
     settings = {
       confirm_os_window_close = 0;
