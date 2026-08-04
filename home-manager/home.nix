@@ -40,6 +40,7 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
     pkgs.kitty
+    pkgs.vesktop
     inputs.helium.packages.${pkgs.system}.default
   ];
   
