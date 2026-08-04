@@ -80,6 +80,12 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Zsh
+  programs.zsh.enable = true;
+  users.extraUsers.landen = {
+    shell = pkgs.zsh;
+  };
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
