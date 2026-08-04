@@ -17,7 +17,7 @@
 
   # Includes
   imports = [
-    ./programs/kitty.nix
+    ./configs/kitty.nix
   ];
 
   # The home.packages option allows you to install Nix packages into your
@@ -44,6 +44,18 @@
     inputs.helium.packages.${pkgs.system}.default
   ];
   
+  # Zsh
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
+    shellAliases = {
+      update = "sudo nixos-rebuild switch";
+    };
+    history.size = 10000;
+  };
+ 
   # Git 
   programs.git = { 
     enable = true;
