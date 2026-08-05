@@ -43,6 +43,10 @@
     pkgs.kitty
     pkgs.vesktop
     pkgs.fastfetch
+    pkgs.grim
+    pkgs.slurp
+    pkgs.wl-clipboard
+    pkgs.mako
     inputs.helium.packages.${pkgs.system}.default
   ];
   
