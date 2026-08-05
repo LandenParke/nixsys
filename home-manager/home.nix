@@ -20,6 +20,7 @@
     ./configs/kitty.nix
     ./window-manager/sway.nix
     ./window-manager/waybar.nix
+    ./window-manager/wofi.nix
   ];
 
   # The home.packages option allows you to install Nix packages into your
