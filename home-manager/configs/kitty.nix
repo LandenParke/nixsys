@@ -1,4 +1,5 @@
-{ inputs, lib, config, pkgs, ... }: {
+{ inputs, lib, config, pkgs, ... }: 
+{
   programs.kitty = lib.mkForce {
     enable = true;
     shellIntegration.enableZshIntegration = true;

@@ -15,11 +15,8 @@
 
   # Includes
   imports = [
-    ./configs/kitty.nix
-    ./window-manager/sway.nix
-    ./window-manager/waybar.nix
-    ./window-manager/wofi.nix
-    ./window-manager/swappy.nix
+    ./window-manager/wm.nix
+    ./configs/conf.nix
   ];
 
   home.packages = [
@@ -34,32 +31,6 @@
     pkgs.tree
     inputs.helium.packages.${pkgs.system}.default
   ];
-  
-  # Zsh
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
-    shellAliases = {
-      update = "sudo nixos-rebuild switch";
-    };
-    history.size = 10000;
-  };
- 
-  # Git 
-  programs.git = { 
-    enable = true;
-    settings = {
-      user = {
-        name = "Landen Parke";
-        email = "eddisonparke@gmail.com";
-      };
-      init.defaultBranch = "main";
-    };
-  };
-  
-  programs.gh.enable = true;
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.

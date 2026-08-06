@@ -114,8 +114,8 @@ keybindings = {
   "Print" = "exec ${pkgs.grim}/bin/grim -g \"$(slurp)\" - | ${pkgs.swappy}/bin/swappy -f -";
 };
 
-
       defaultWorkspace = "workspace number 1";
+      
       input = {
         "type:touchpad" = {
           natural_scroll = "enabled";
