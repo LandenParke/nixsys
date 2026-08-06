@@ -29,7 +29,8 @@
     pkgs.wl-clipboard
     pkgs.mako
     pkgs.tree
-    inputs.helium.packages.${pkgs.system}.default
+    pkgs.vscode
+    inputs.helium.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

@@ -72,12 +72,6 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # Zsh
-  programs.zsh.enable = true;
-  users.extraUsers.landen = {
-    shell = pkgs.zsh;
-  };
-
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
@@ -93,6 +87,71 @@
   hardware.graphics.enable = true;
 
   services.fwupd.enable = true;
+
+
+  # Zsh
+  programs.zsh.enable = true;
+  users.extraUsers.landen = {
+    shell = pkgs.zsh;
+  };
+
+  # Font defaults
+  fonts = {
+    packages = with pkgs; [
+      noto-fonts
+      noto-fonts-color-emoji
+      font-awesome
+      source-han-sans
+      source-han-sans
+      source-han-serif
+    ];
+    fontconfig.defaultFonts = {
+      serif = [ "Noto Serif" "Source Han Serif" ];
+      sansSerif = [ "Noto Sans" "Source Han Sans" ];
+    };
+  };
+
+  # Some performance thing idk recommended by wiki
+  security.pam.loginLimits = [
+    { domain = "@users"; item = "rtprio"; type = "-"; value = 1; }
+  ];
+
+  # Screensharing 
+  xdg.portal.config = {
+    enable = true;
+    wlr.enable = true;
+  };
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    pulse.enable = true;
+  };
+
+  # Bluetooth
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+    settings = {
+      General = {
+        # Shows battery charge of connected devices on supported
+        # Bluetooth adapters. Defaults to 'false'.
+        Experimental = true;
+        # When enabled other devices can connect faster to us, however
+        # the tradeoff is increased power consumption. Defaults to
+        # 'false'.
+        FastConnectable = true;
+      };
+      Policy = {
+        # Enable all controllers when they are found. This includes
+        # adapters present on start as well as adapters that are plugged
+        # in later on. Defaults to 'true'.
+        AutoEnable = true;
+      };
+    };
+  };
+  services.blueman.enable = true;
+
+
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
