@@ -27,7 +27,6 @@
     pkgs.slurp
     pkgs.swappy
     pkgs.wl-clipboard
-    pkgs.mako
     pkgs.tree
     pkgs.vscode
     inputs.helium.packages.${pkgs.stdenv.hostPlatform.system}.default
