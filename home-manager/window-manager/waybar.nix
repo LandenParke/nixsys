@@ -5,7 +5,9 @@
     settings.main = {
       modules-left = [ "sway/workspaces" ];
       modules-center = [ "clock" ];
-      modules-right = [ "bluetooth" "battery" ];
+      modules-right = [ "cpu" "temperature" "memory" "battery" 
+      
+      ];
     };
   };
 }

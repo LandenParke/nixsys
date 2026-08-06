@@ -20,15 +20,20 @@
   ];
 
   home.packages = [
-    pkgs.kitty
-    pkgs.vesktop
+    # Tools
     pkgs.fastfetch
     pkgs.grim
     pkgs.slurp
     pkgs.swappy
     pkgs.wl-clipboard
     pkgs.tree
+
+    # Applications
+    pkgs.kitty
     pkgs.vscode
+    pkgs.vesktop
+    pkgs.steam
+    pkgs.prismlauncher
     inputs.helium.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
