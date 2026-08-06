@@ -1,12 +1,12 @@
 {pkgs, config, ... }: 
-services.swayosd = {
-  enable = true;
-  topMargin = 0.9;
-}
 {
+  services.swayosd = {
+    enable = true;
+    topMargin = 0.9;
+  };
+  
   wayland.windowManager.sway = {
-    enable = true
-;
+    enable = true;
     config = rec {
       right = "l";
       left = "j";
