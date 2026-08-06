@@ -19,6 +19,7 @@
     ./window-manager/sway.nix
     ./window-manager/waybar.nix
     ./window-manager/wofi.nix
+    ./window-manager/swappy.nix
   ];
 
   home.packages = [
@@ -27,8 +28,10 @@
     pkgs.fastfetch
     pkgs.grim
     pkgs.slurp
+    pkgs.swappy
     pkgs.wl-clipboard
     pkgs.mako
+    pkgs.tree
     inputs.helium.packages.${pkgs.system}.default
   ];
   

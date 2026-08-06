@@ -1,4 +1,8 @@
 {pkgs, config, ... }: 
+services.swayosd = {
+  enable = true;
+  topMargin = 0.9;
+}
 {
   wayland.windowManager.sway = {
     enable = true
@@ -87,22 +91,27 @@ keybindings = {
   "${modifier}+r" = "mode \"resize\"";
 
   # Utilities (PulseAudio / playerctl / brightness / screenshot)
-  # NOTE: these are from the default config; they may not work if your keys differ (but HM format-wise it's fine)
-  "XF86AudioMute" = "exec pactl set-sink-mute @DEFAULT_SINK@ toggle";
-  "XF86AudioLowerVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ -5%";
-  "XF86AudioRaiseVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ +5%";
-  "XF86AudioMicMute" = "exec pactl set-source-mute @DEFAULT_SOURCE@ toggle";
+  # Audio Volume Controls (Sink - Output)
+  "XF86AudioRaiseVolume" = "exec swayosd-client --output-volume raise";
+  "XF86AudioLowerVolume" = "exec swayosd-client --output-volume lower";
+  "XF86AudioMute" = "exec swayosd-client --output-volume mute-toggle";
+        
+  # Microphone Volume Control (Source - Input)
+  "XF86AudioMicMute" = "exec swayosd-client --input-volume mute-toggle";
+        
+  # Caps Lock
+  "--release Caps_Lock" = "exec swayosd-client --caps-lock";
+        
+  # Brightness Controls
+  "XF86MonBrightnessUp" = "exec swayosd-client --brightness raise";
+  "XF86MonBrightnessDown" = "exec swayosd-client --brightness lower";
+        
+  # Media Player Controls
+  "XF86AudioPlay" = "exec swayosd-client --playerctl play-pause";
+  "XF86AudioNext" = "exec swayosd-client --playerctl next";
+  "XF86AudioPrev" = "exec swayosd-client --playerctl prev";
 
-  "XF86AudioPlay" = "exec playerctl play-pause";
-  "XF86AudioPause" = "exec playerctl play-pause";
-  "XF86AudioPrev" = "exec playerctl previous";
-  "XF86AudioNext" = "exec playerctl next";
-  "XF86AudioStop" = "exec playerctl stop";
-
-  "XF86MonBrightnessDown" = "exec brightnessctl set 5%-";
-  "XF86MonBrightnessUp" = "exec brightnessctl set 5%+";
-
-  "Print" = "exec grim";
+  "Print" = "exec ${pkgs.grim}/bin/grim -g \"$(slurp)\" - | ${pkgs.swappy}/bin/swappy -f -";
 };
 
 
