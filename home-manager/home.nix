@@ -32,7 +32,6 @@
     pkgs.kitty
     pkgs.vscode
     pkgs.vesktop
-    pkgs.steam
     pkgs.prismlauncher
     inputs.helium.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
