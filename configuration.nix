@@ -4,7 +4,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
+      #inputs.home-manager.nixosModules.default
     ];
 
   # Bootloader.
@@ -59,7 +59,7 @@
     packages = with pkgs; [];
   };
   
-  home-manager = {
+/*   home-manager = {
     extraSpecialArgs = {inherit inputs; };
     users = {
       "landen" = import ./home-manager/home.nix;
@@ -67,7 +67,7 @@
     useUserPackages = true;
     useGlobalPkgs = true;
     backupFileExtension = "backup";
-  };
+  }; */
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
