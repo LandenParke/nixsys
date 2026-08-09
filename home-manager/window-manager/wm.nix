@@ -6,5 +6,7 @@
     ./waybar.nix
     ./wofi.nix
     ./mako.nix
+    ./swayidle.nix
+    ./hyprlock
   ];
 }
