@@ -8,5 +8,6 @@
     ./mako.nix
     ./swayidle.nix
     ./hyprlock.nix
+    ./wpaperd.nix
   ];
 }
