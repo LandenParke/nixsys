@@ -30,6 +30,8 @@
   # Set your time zone.
   time.timeZone = "America/New_York";
 
+  security.pam.services.hyprlock = {};
+
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 

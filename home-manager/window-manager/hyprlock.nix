@@ -1,12 +1,12 @@
 {pkgs, config, ... }:
 {
-  security.pam.services.hyprlock = {};
   programs.hyprlock = {
     enable = true;
     settings = {
       general = {
         hide_cursor = true;
         ignore_empty_input = true;
+        ignore_wakelock = true;
       };
       animations = {
         enabled = true;
@@ -37,9 +37,10 @@
           inner_color = "rgb(91, 96, 120)";
           outer_color = "rgb(24, 25, 38)";
           outline_thickness = 5;
-          placeholder_text = '\'<span foreground="##cad3f5">Password...</span>'\';
+          placeholder_text = "Enter your password";
           shadow_passes = 2;
-      }
+        }
+      ]; 
 
     };
   };
