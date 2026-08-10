@@ -3,7 +3,7 @@
   services.wpaperd = {
     enable = true;
     settings = {
-      default = {
+      eDP-1 = {
         duration = "5m";
         path = "${./../wallpapers}";
         sorting = "ascending";

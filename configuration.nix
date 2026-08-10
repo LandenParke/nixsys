@@ -164,6 +164,14 @@
   };
   services.blueman.enable = true;
 
+  # Printer stuff
+  services.printing.enable = true;
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
+
 
 
   # This value determines the NixOS release from which the default
