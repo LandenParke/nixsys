@@ -3,10 +3,11 @@
   services.wpaperd = {
     enable = true;
     settings = {
-      eDP-1 = {
+      default = {
         duration = "5m";
         path = "${./../wallpapers}";
-        sorting = "ascending";
+        mode = "center";
+        sorting = "random";
         apply-shadow = false;
       };  
     };
