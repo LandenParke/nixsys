@@ -27,6 +27,7 @@
     pkgs.swappy
     pkgs.wl-clipboard
     pkgs.tree
+    pkgs.peazip
 
     # Applications
     pkgs.kitty
