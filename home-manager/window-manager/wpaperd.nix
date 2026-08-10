@@ -1,10 +1,10 @@
 {pkgs, config, ... }:
 {
-  programs.wpaperd = {
+  services.wpaperd = {
     enable = true;
     settings = {
       default = {
-        duration = "2m";
+        duration = "5m";
         path = "${./../wallpapers}";
         sorting = "ascending";
         apply-shadow = false;
