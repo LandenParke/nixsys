@@ -17,6 +17,7 @@
   imports = [
     ./window-manager/wm.nix
     ./configs/conf.nix
+    ./programs/programs.nix
   ];
 
   home.packages = [
