@@ -2,5 +2,6 @@
 {
   imports = [
     ./obsidian.nix
+    ./nvim.nix
   ];
 }
