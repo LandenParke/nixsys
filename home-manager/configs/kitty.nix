@@ -8,7 +8,8 @@
       size = 12;
       name = "IBM Plex Mono";
     };
-    extraConfig = builtins.readFile ./eclipse.conf;
+#    extraConfig = builtins.readFile ./eclipse.conf;
+    extraConfig = builtins.readFile ./gruvbox_dark.conf;
     settings = {
       confirm_os_window_close = 0;
      };
