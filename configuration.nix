@@ -84,6 +84,9 @@
     thunar
   ];
 
+  environment.variables.EDITOR = "nvim";
+  environment.variables.TERMINAL = "kitty";
+
   # Steam
   programs.steam = {
     enable = true;

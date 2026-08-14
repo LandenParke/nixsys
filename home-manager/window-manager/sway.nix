@@ -15,11 +15,13 @@
       modifier = "Mod4";
       terminal = "kitty";
       menu = "wofi";
-
       bars = [ { command = "waybar";} ]; # Waybar
       window = {
         titlebar = false; # remove title bars
       };
+      startup = [
+	{ command = "${pkgs.wpaperd}/bin/wpaperd"; }
+      ];
 
       keybindings = {
         # Basics
@@ -121,7 +123,6 @@
           natural_scroll = "enabled";
         };
       };
-
     };
   };
 }

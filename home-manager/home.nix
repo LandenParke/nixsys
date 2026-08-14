@@ -29,7 +29,8 @@
     pkgs.wl-clipboard
     pkgs.tree
     pkgs.peazip
-
+    pkgs.clang
+    pkgs.pavucontrol
     # Applications
     pkgs.kitty
     pkgs.vscode
