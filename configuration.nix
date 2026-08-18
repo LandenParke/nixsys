@@ -91,6 +91,9 @@
 
   environment.variables.EDITOR = "nvim";
   environment.variables.TERMINAL = "kitty";
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+  };
 
   # Steam
   programs.steam = {
@@ -141,6 +144,7 @@
   xdg.portal.config = {
     enable = true;
     wlr.enable = true;
+    extraPortals = [pkgs.xdg-desktop-portal-wlr];
   };
   services.pipewire = {
     enable = true;

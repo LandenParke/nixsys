@@ -4,9 +4,14 @@
 
     vaults.notes.target = "Documents/Obsidian";
 
-    defaultSettings.app = {
-      alwaysUpdateLinks = true;
-      spellcheck = true;
+    defaultSettings = {
+      app = {
+	alwaysUpdateLinks = true;
+	spellcheck = true;
+      };
+#      communityPlugins = [
+#	{ name = "obsidian-excalidraw-plugin"; enable = true; }
+#      ];
     };
   };
 }
