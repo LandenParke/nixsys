@@ -87,6 +87,9 @@
     kitty
     sway
     thunar
+    (python3.withPackages (python-pkgs: with python-pkgs; [
+      dbus-python
+    ]))
   ];
 
   environment.variables.EDITOR = "nvim";

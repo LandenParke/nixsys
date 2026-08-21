@@ -36,6 +36,7 @@
     pkgs.vscode
     pkgs.vesktop
     pkgs.prismlauncher
+    pkgs.networkmanagerapplet
     inputs.helium.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 

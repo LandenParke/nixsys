@@ -9,9 +9,9 @@
     enable = true;
     config = rec {
       right = "l";
-      left = "j";
-      up = "i";
-      down = "k";
+      left = "h";
+      up = "k";
+      down = "j";
       modifier = "Mod4";
       terminal = "kitty";
       menu = "wofi";
@@ -19,9 +19,37 @@
       window = {
         titlebar = false; # remove title bars
       };
+      colors = {
+	focused = {
+	  border = "#6B8F71";
+	  background = "#6B8F71";
+	  text = "#6B8F71";
+	  indicator = "#6B8F71";
+	  childBorder = "#6B8F71";
+	};
+	unfocused = {
+	  border = "#1d1e18";
+	  background = "#1d1e18";
+	  text = "#1d1e18";
+	  indicator = "#1d1e18";
+	  childBorder = "#1d1e18";
+	};
+	urgent = {
+	  border = "#710000";
+	  background = "#710000";
+	  text = "#710000";
+	  indicator = "#710000";
+	  childBorder = "#710000";
+	};
+      };
       startup = [
 	{ command = "${pkgs.wpaperd}/bin/wpaperd"; }
       ];
+      output = {
+	HDMI-A-1 = {
+	  mode = "2560x1440@143Hz";  
+	};
+      };
 
       keybindings = {
         # Basics
@@ -122,6 +150,9 @@
         "type:touchpad" = {
           natural_scroll = "enabled";
         };
+	"type:keyboard" = {
+	  xkb_options = "caps:escape";
+	};
       };
     };
   };
