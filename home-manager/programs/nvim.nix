@@ -11,6 +11,10 @@
       syntax on
       filetype plugin indent on
       colorscheme gruvbox-material
+      :map <Up> <Nop>
+      :map <Left> <Nop>
+      :map <Right> <Nop>	
+      :map <Down> <Nop>
     '';
     plugins = with pkgs.vimPlugins; [
       nvim-treesitter

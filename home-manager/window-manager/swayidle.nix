@@ -4,11 +4,11 @@
     enable = true;
     systemdTargets = [ "sway-session.target" ];
     events = {
-      before-sleep =  "${pkgs.hyprlock}/bin/hyprlock";
+      before-sleep = "${pkgs.hyprlock}/bin/hyprlock";
       lock = "${pkgs.hyprlock}/bin/hyprlock"; 
   };
     timeouts = [
-            { timeout = 300; command = "${pkgs.systemd}/bin/systemctl suspend";}
+	    { timeout = 600; command = "${pkgs.systemd}/bin/systemctl suspend";}
           ];
   
   };

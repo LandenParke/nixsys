@@ -84,12 +84,11 @@
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
-    kitty
     sway
-    thunar
     (python3.withPackages (python-pkgs: with python-pkgs; [
       dbus-python
     ]))
+    gnumake
   ];
 
   environment.variables.EDITOR = "nvim";
@@ -105,7 +104,14 @@
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
-
+  
+  programs.thunar = {
+    enable = true;
+    plugins = with pkgs; [
+      thunar-archive-plugin
+      thunar-volman
+    ];
+  };
 
   security.polkit.enable = true;
   

@@ -8,8 +8,8 @@
       };
       actions = true;
       anchor = "top-right";
-      background-color = "#000000";
-      border-color = "#FFFFFF";
+      background-color = "#373737";
+      border-color = "#232323";
       border-radius = 0;
       default-timeout = 3000;
       font = "monospace 10";

@@ -37,6 +37,7 @@
     pkgs.vesktop
     pkgs.prismlauncher
     pkgs.networkmanagerapplet
+    pkgs.onlyoffice-desktopeditors
     inputs.helium.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
@@ -58,14 +59,18 @@
   home.pointerCursor = {
     enable = true;
     gtk.enable = true;
-    package = lib.mkForce pkgs.bibata-cursors;
-    name = "Bibata-Modern-Classic";
+    package = lib.mkForce pkgs.hackneyed;
+    name = "Hackneyed";
     size = 24;
   };
   
   gtk = {
     enable = true;
     colorScheme = "dark";
+    iconTheme = {
+      package = pkgs.gruvbox-plus-icons;
+      name = "Gruvbox-Plus-Dark";
+    };
     gtk3.extraConfig = {
       gtk-application-prefer-dark-theme = true;
     };
@@ -73,7 +78,6 @@
       gtk-application-prefer-dark-theme = true;
     };
   };
-  
 
   home.sessionVariables = {
     # EDITOR = "emacs";
