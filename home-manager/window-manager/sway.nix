@@ -14,7 +14,7 @@
       down = "j";
       modifier = "Mod4";
       terminal = "kitty";
-      menu = "wofi";
+      menu = "rofi";
       bars = [ { command = "waybar";} ]; # Waybar
       window = {
         titlebar = false; # remove title bars
@@ -43,7 +43,8 @@
 	};
       };
       startup = [
-	{ command = "${pkgs.wpaperd}/bin/wpaperd"; }
+	{ command = "${pkgs.wpaperd}/bin/wpaperd -d"; }
+	{ command = "${pkgs.swayosd}/bin/swayosd-server &";}
       ];
       output = {
 	HDMI-A-1 = {
@@ -58,7 +59,7 @@
         # Basics
         "${modifier}+Return" = "exec ${pkgs.kitty}/bin/kitty";
         "${modifier}+q" = "kill";
-        "${modifier}+d" = "exec ${pkgs.wofi}/bin/wofi --show drun";
+        "${modifier}+d" = "exec ${pkgs.rofi}/bin/rofi -show combi";
         "${modifier}+Shift+c" = "reload";
         "${modifier}+Shift+e" = "exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'";
 

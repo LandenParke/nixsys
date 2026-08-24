@@ -21,6 +21,9 @@
   ];
 
   home.packages = [
+    # Icons
+    pkgs.gruvbox-plus-icons
+    pkgs.papirus-icon-theme
     # Tools
     pkgs.fastfetch
     pkgs.grim
@@ -38,6 +41,7 @@
     pkgs.prismlauncher
     pkgs.networkmanagerapplet
     pkgs.onlyoffice-desktopeditors
+    pkgs.quartus-prime-lite
     inputs.helium.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 

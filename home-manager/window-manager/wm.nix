@@ -4,7 +4,7 @@
     ./swappy.nix
     ./sway.nix
     ./waybar.nix
-    ./wofi.nix
+    ./rofi.nix
     ./mako.nix
     ./swayidle.nix
     ./hyprlock.nix
