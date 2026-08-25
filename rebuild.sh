@@ -1,3 +1,3 @@
 # NixOS Rebuild Script
 
-sudo nixos-rebuild switch --flake .
+sudo nixos-rebuild switch --flake .#${HOSTNAME}
