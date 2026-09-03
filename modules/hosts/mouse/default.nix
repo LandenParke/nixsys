@@ -10,6 +10,7 @@
       
       inputs.helium-flake.nixosModules.default
       self.nixosModules.helium
+
     ];
   };
 }

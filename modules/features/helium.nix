@@ -14,7 +14,6 @@
         "DefaultSearchProviderEnabled" = true;
         "DefaultSearchProviderSearchURL" = "https://duckduckgo.com/?q={searchTerms}";
         "ExtensionInstallForcelist" = [
-          "cjpalhdlnbpafiamejdnhcphjbkeiagm" # ad block
           "nngceckbapebfimnlniiiahkandclblb" # bitwarden
         ];
       };

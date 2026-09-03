@@ -5,7 +5,8 @@
   imports =
     [
       self.nixosModules.mouseHardware
-      self.nixosModules.niri
+      self.nixosModules.i3
+      self.nixosModules.picom
     ];
 
   # Bootloader.
@@ -60,15 +61,13 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    
-    # use the example session manager (no others are packaged yet so this is enabled by default,
+      # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput.enable = true;
-
+  #Bluetooth
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
 
   users.users."landen" = {
     isNormalUser = true;
@@ -85,10 +84,10 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-     vim 
-     wget
-     git
-    kdePackages.kate
+    vim 
+    wget
+    git
+    brightnessctl
   ];
 
 
