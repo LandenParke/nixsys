@@ -4,11 +4,13 @@
       enable = true;
       settings = {
 	window.dimensions = {
-	  lines = 3;
-	  columns = 200;
+	  lines = 52;
+	  columns = 174;
+	};
+	font = {
+	  size = 8;
 	};
       };
-
     };
   };
 }

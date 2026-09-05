@@ -2,8 +2,10 @@
   flake.homeModules.landenGit = { pkgs, ... }: {
     programs.git = {
       enable = true;
-      userName = "LandenParke";
-      userEmail = "eddisonparke@gmail.com";
+      settings.user = {
+        name = "LandenParke";
+	email = "eddisonparke@gmail.com";
+      };
     };
     programs.gh = {
       enable = true;

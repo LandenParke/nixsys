@@ -6,6 +6,7 @@
       enableTearFree = true;
       windowManager.i3 = {
 	enable = true;
+	configFile = null;
       };
     };
   };

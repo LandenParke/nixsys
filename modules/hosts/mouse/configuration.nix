@@ -6,11 +6,13 @@
     [
       self.nixosModules.mouseHardware
       self.nixosModules.i3
-      self.nixosModules.picom
     ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot = {
+    enable = true;
+    sortKey = "z";
+  };
   boot.loader.efi.canTouchEfiVariables = true;
 
 	# Experimental features
@@ -43,6 +45,9 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
+
+  # Enable dbus
+  services.dbus.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -79,6 +84,8 @@
   };
   
   home-manager.users.landen = self.homeModules.landenModule;
+  home-manager.extraSpecialArgs = { inherit inputs; };
+  home-manager.backupFileExtension = "hm-bak";
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
